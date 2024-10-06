@@ -131,8 +131,8 @@ int main(){
                 new_value->next = nullptr;
                 new_value->rating = temp_rating;
                 new_value->comments = temp_comment;
-                head = new_value;
-                tail = head; // tail-> now has the data of the first node and points to nullptr
+                current = new_value;
+                tail = current; // tail-> now has the data of the first node and points to nullptr
             }
             else{
                 // add_tail_node(new_value, tail, temp_comment, temp_rating);
@@ -152,7 +152,8 @@ int main(){
     //---------------------------------------------------------------------------------------
     
     // output is printing out correctly
-    output(head);
+    // FOR THE 2ND CHOICE: output(current) prints out the tail node, output(head) prints out the head node
+    output(current);
 
     delete_linked_list(current, head);
     head = nullptr;
