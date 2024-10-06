@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include <iomanip>
 
 using namespace std;
 
@@ -15,4 +17,20 @@ struct Node {
 };
 
 void output(Node *);
-void delete_node()
+void insert_node(Node *, Node *, Node *);
+void add_front_node(Node *, Node *, int);
+void add_tail_node();
+void delete_linked_list(Node *, Node *);
+
+
+int main(){
+    Node *head = nullptr;
+    int choice;
+    cout << "Which linked list method should we use?" << endl;
+    cout << setw(18) << "[1] New nodes are added at the head of the linked list" << endl;
+    cout << setw(18) << "[2] New nodes are added at the tail of the linked list" << endl;
+    cout << setw(18) << "Choice: ";
+    cin >> choice;
+
+    return 0;
+}
