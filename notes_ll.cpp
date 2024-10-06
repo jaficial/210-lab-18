@@ -150,5 +150,6 @@ void output(Node * hd) {
         cout << "[" << count++ << "] " << current->value << endl;
         current = current->next;
     }
+
     cout << endl;
 }
