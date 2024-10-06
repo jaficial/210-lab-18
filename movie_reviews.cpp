@@ -49,7 +49,7 @@ void output(Node * list){
         cout << "Empty list." << endl;
         return;
     }
-//
+
     else{
         int count = 1;
         Node * current = list;
