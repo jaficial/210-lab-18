@@ -32,6 +32,7 @@ void delete_linked_list(Node*current, Node *head){
 
 int main(){
     Node *head = nullptr;
+
     int choice;
     cout << "Which linked list method should we use?" << endl;
     cout << setw(15) << "[1] New nodes are added at the head of the linked list" << endl;
@@ -47,7 +48,7 @@ int main(){
             cin >> rating;
             cout << endl; 
         }
-        // taking break
+        // im back
     }
 
     else{
@@ -55,6 +56,7 @@ int main(){
     
     }
 
+    delete_linked_list(current, head);
     head = nullptr;
     return 0;
 }
