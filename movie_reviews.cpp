@@ -3,13 +3,8 @@
 #include <iomanip>
 
 using namespace std;
-//
-/* Need to incorporate strings into linked lists in the form of movie reviews.
-   Code needs to be able to add nodes to the head and tail of the linked list.
-   At startup, the program asks which mode the user would like to use (adding by head or tail)
-   There should be 2 pieces of data obtained (rating and the comments/review of the movie)*/
 
-// CITED: Will be reusing some of my code from my previous lab submission (Lab 17) for linked list functions 
+// CITED: Will be reusing some of my code from my previous lab submission (Lab 17) for linked list functions
 
 struct Node {
     float rating;
@@ -22,6 +17,8 @@ void add_front_node(Node *, Node *, string, int);
 void add_tail_node();
 void delete_linked_list(Node *, Node *);
 
+/* funtion takes in the head and current node of the linked list,
+   and deallocates the memory for each node.*/
 void delete_linked_list(Node*current, Node *head){
     while(current){
         head = current->next;
@@ -30,14 +27,16 @@ void delete_linked_list(Node*current, Node *head){
     }
 }
 
-// front node function works
+/* add_front_node takes in the new node, data for the new node, and the previous head node,
+   and sets the new node to point at the head node */
 void add_front_node(Node *new_value, Node *head, string temp_comment, float temp_rating){
 	new_value->next = head;
 	new_value->comments = temp_comment;
 	new_value->rating = temp_rating;
 }
-
-void add_tail_node(Node *new_value, Node *tail, string temp_comment, int temp_rating){
+/*  add_tail_node takes in the new node, data for the new node, and the tail node,
+    and assigns the tail node to the new node */
+void add_tail_node(Node *new_value, Node *tail, string temp_comment, float temp_rating){
     tail->next = new_value;
     new_value->next = nullptr;
 	new_value->comments = temp_comment;
@@ -107,7 +106,7 @@ int main(){
             }
             cout << "Enter another review? Y/N: ";
             cin >> temp_more_reviews;
-            if (temp_more_reviews == 'n'){
+            if ((temp_more_reviews == 'n') || (temp_more_reviews == 'N')){
                 more_reviews = 0;
             }
         }
@@ -116,7 +115,6 @@ int main(){
     else { // adding node to the tail of the linked list, 
 	    /* this needs to be formatted in a way where new value needs to 
 	     be pointing to a null in order to add to the tail. Return to this function afterwards. */ 
-        cout << "You chose choice 2!\n";
         while(more_reviews){
             float temp_rating;
             string temp_comment;
@@ -137,15 +135,12 @@ int main(){
             }
             else{
                 add_tail_node(new_value, tail, temp_comment, temp_rating);
-                // tail->next = new_value;
-                // new_value->next = nullptr;
-                // new_value->comments = temp_comment;
-                // new_value->rating = temp_rating;
                 tail = new_value; // tail node is now the most recently added node
             }
+
             cout << "Enter another review? Y/N: ";
             cin >> temp_more_reviews;
-            if (temp_more_reviews == 'n'){
+            if ((temp_more_reviews == 'n') || (temp_more_reviews == 'N')){
                 more_reviews = 0;
             }
         }
@@ -154,7 +149,6 @@ int main(){
     //---------------------------------------------------------------------------------------
     
     // output is printing out correctly
-    // FOR THE 2ND CHOICE: output(current) prints out the tail node, output(head) prints out the head node
     output(head);
 
     delete_linked_list(current, head);
