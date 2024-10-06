@@ -22,6 +22,13 @@ void add_front_node(Node *, Node *, int);
 void add_tail_node();
 void delete_linked_list(Node *, Node *);
 
+void delete_linked_list(Node*current, Node *head){
+    while(current){
+        head = current->next;
+        delete current;
+        current = head;
+    }
+}
 
 int main(){
     Node *head = nullptr;
@@ -31,10 +38,24 @@ int main(){
     cout << setw(15) << "[2] New nodes are added at the tail of the linked list" << endl;
     cout << setw(15) << "Choice: ";
     cin >> choice;
+    bool review = 1;
+    float rating;
 
     if (choice == 1){
+        while(review){
+            cout << "Enter review rating 0-5: ";
+            cin >> rating;
+            cout << endl;
 
+        }
         
     }
+
+    else{
+
+    
+    }
+
+    head = nullptr;
     return 0;
 }
