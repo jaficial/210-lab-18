@@ -32,7 +32,7 @@ void delete_linked_list(Node*current, Node *head){
     }
 }
 
-// output is fixed apart for some formatting
+// output is fixed
 void output(Node * list){
     if (!list){
         cout << "Empty list." << endl;
@@ -102,7 +102,6 @@ int main(){
         }
     
     //else { // adding node to the tail of the linked list
-    
     }
 
     //---------------------------------------------------------------------------------------
