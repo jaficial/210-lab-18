@@ -18,7 +18,6 @@ struct Node {
 };
 
 void output(Node *);
-void insert_node(Node *, Node *, Node *);
 void add_front_node(Node *, Node *, string, int);
 void add_tail_node();
 void delete_linked_list(Node *, Node *);
@@ -142,13 +141,14 @@ int main(){
 		if (temp_more_reviews == 'n'){
 			more_reviews = 0;
 		}
-	}  
+	}
+	output(tail);
     }
 
     //---------------------------------------------------------------------------------------
     
     //output is printing out correctly
-    output(head);
+    //output(head);
 
     delete_linked_list(current, head);
     head = nullptr;
