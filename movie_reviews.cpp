@@ -19,7 +19,7 @@ struct Node {
 
 void output(Node *);
 void insert_node(Node *, Node *, Node *);
-void add_front_node(Node *, Node *, int);
+void add_front_node(Node *, Node *, string, int);
 void add_tail_node();
 void delete_linked_list(Node *, Node *);
 
@@ -29,6 +29,13 @@ void delete_linked_list(Node*current, Node *head){
         delete current;
         current = head;
     }
+}
+
+// front node function works
+void add_front_node(Node *new_value, Node *head, string temp_comment, int temp_rating){
+	new_value->next = head;
+	new_value->comments = temp_comment;
+	new_value->rating = temp_rating;
 }
 
 // output is fixed
@@ -88,9 +95,7 @@ int main(){
                 new_value->comments = temp_comment;
             }
             else{ // if its not the first node
-                new_value->next = head;
-                new_value->comments = temp_comment;
-                new_value->rating = temp_rating;
+                add_front_node(new_value, head, temp_comment, temp_rating);
                 head = new_value; // head node is now the most recently added node
             }
             cout << "Enter another review? Y/N: ";
@@ -100,7 +105,10 @@ int main(){
             }
         }
     
-    //else { // adding node to the tail of the linked list
+    else { // adding node to the tail of the linked list, 
+	    // this needs to be formatted in a way where new value needs to 
+	    // be pointing to a null in order to add to the tail. Return to this function afterwards. 
+    
     }
 
     //---------------------------------------------------------------------------------------
