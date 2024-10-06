@@ -51,7 +51,11 @@ int main(){
             Node *new_value = new Node;
             float temp_rating;
             cin >> temp_rating;
-            string review_comment;
+            string temp_comment;
+            cout << "Enter review comments: ";
+            cin.ignore();
+            getline(cin, temp_comment);
+        
             if (!head){ // if its the first node
                 head = new_value;
                 new_value->next = nullptr;
@@ -59,7 +63,7 @@ int main(){
             }
             else{ // if its not the first node
                 new_value->next = head;
-                new_value->
+                
             }
             
         }
