@@ -77,12 +77,12 @@ int main(){
         }
     }
     else { // adding node to the tail of the linked list
-
+    // been experimenting with nodes
     }
     cout << "this will be current: " << endl;
     cout << current->comments << endl;
     cout << current->rating << endl;
-    
+
     delete_linked_list(current, head);
     head = nullptr;
     return 0;
