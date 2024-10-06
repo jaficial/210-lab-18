@@ -108,7 +108,28 @@ int main(){
     else { // adding node to the tail of the linked list, 
 	    // this needs to be formatted in a way where new value needs to 
 	    // be pointing to a null in order to add to the tail. Return to this function afterwards. 
-    
+  	while(more_reviews){
+		float temp_rating;
+		string temp_ccomment;
+		cout << "Enter review rating 0-5: ";
+		Node *new_value = new Node;
+		cin >> temp_rating;
+		cout << "Enter review comments: ";
+		cin.ignore();
+		getline(cin, temp_commment);
+		
+		if (!head){ // in the case that it is the first node
+			head = new_value;
+			new_value->next = nullptr;
+			new_value->rating = temp_rating;
+			new_value->comments = temp_comment;
+			Node *tail = new Node;
+			tail = head; // tail-> is now pointing to nullptr
+		}
+		else{
+			add_tail_node(new_value, tail, temp_comment, temp_rating);
+		}
+	}  
     }
 
     //---------------------------------------------------------------------------------------
