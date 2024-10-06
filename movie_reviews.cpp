@@ -51,16 +51,20 @@ int main(){
         while(more_reviews){
             cout << "Enter review rating 0-5: ";
             Node *new_value = new Node;
+            float temp_rating;
+            cin >> temp_rating;
+            string review_comment;
             if (!head){
-                head = new_value
-                
+                head = new_value;
+                new_value->next = nullptr;
+                new_value->rating = temp_rating
 
             }
             
         }
     }
     else {
-
+    
 
     }
 
