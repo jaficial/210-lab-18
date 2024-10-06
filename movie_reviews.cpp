@@ -2,7 +2,6 @@
 #include <string>
 #include <iomanip>
 
-
 using namespace std;
 
 /* Need to incorporate strings into linked lists in the form of movie reviews.
@@ -38,7 +37,7 @@ void output(Node * list){
         cout << "Empty list." << endl;
         return;
     }
-
+//
     else{
         int count = 1;
         Node * current = list;
