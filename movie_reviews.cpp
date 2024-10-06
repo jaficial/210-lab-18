@@ -47,7 +47,7 @@ int main(){
             cin >> rating;
             cout << endl; 
         }
-        
+        // taking break
     }
 
     else{
