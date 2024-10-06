@@ -52,7 +52,7 @@ int main(){
             string temp_comment;
 
             cout << "Enter review rating 0-5: ";
-            Node *new_value = new Node;
+            Node *new_value = new Node; // Node *new_value is in loop as a new one has to get defined for each new node
             cin >> temp_rating;
             cout << "Enter review comments: ";
             cin.ignore();
@@ -62,12 +62,13 @@ int main(){
                 head = new_value;
                 new_value->next = nullptr;
                 new_value->rating = temp_rating;
+                new_value->comments = temp_comment;
             }
             else{ // if its not the first node
                 new_value->next = head;
                 new_value->comments = temp_comment;
                 new_value->rating = temp_rating;
-               
+                head = new_value; // head node is now the most recently added node
             }
             cout << "Enter another review? Y/N: ";
             cin >> temp_more_reviews;
@@ -75,13 +76,16 @@ int main(){
                 more_reviews = 0;
             }
         }
+    
+    //else { // adding node to the tail of the linked list
+    
     }
-    else { // adding node to the tail of the linked list
-    // been experimenting with nodes
-    }
-    cout << "this will be current: " << endl;
-    cout << current->comments << endl;
-    cout << current->rating << endl;
+
+    //---------------------------------------------------------------------------------------
+    
+    cout << "this will be most recent head: " << endl;
+    cout << head->comments << endl;
+    cout << head->rating << endl;
 
     delete_linked_list(current, head);
     head = nullptr;
