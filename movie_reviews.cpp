@@ -45,8 +45,7 @@ int main(){
         while(review){
             cout << "Enter review rating 0-5: ";
             cin >> rating;
-            cout << endl;
-
+            cout << endl; 
         }
         
     }
