@@ -63,7 +63,7 @@ int main(){
             }
             else{ // if its not the first node
                 new_value->next = head;
-                // taking short break, brb
+               
             }
             
         }
