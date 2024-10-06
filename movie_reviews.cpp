@@ -32,6 +32,22 @@ void delete_linked_list(Node*current, Node *head){
     }
 }
 
+void output(Node * list){
+    if (!list){
+        cout << "Empty list." << endl;
+    }
+
+    int count = 1;
+    Node * current = list;
+    cout << "Outputting all reviews:" << endl;
+    while(current){
+        cout << setw(15) << "> Review " << count++ << ": " << current->rating << ": " << current->comments;
+        cout << endl;
+        current = current->next;
+    }
+
+}
+
 int main(){
     Node *head = nullptr;
     Node *current = head; // current points to head node
@@ -83,11 +99,14 @@ int main(){
 
     //---------------------------------------------------------------------------------------
     
-    cout << "this will be most recent head: " << endl;
-    cout << head->comments << endl;
-    cout << head->rating << endl;
+    // cout << "this will be most recent head: " << endl;
+    // cout << head->comments << endl;
+    // cout << head->rating << endl;
+
+    output(head);
 
     delete_linked_list(current, head);
     head = nullptr;
+    output(head);
     return 0;
 }
