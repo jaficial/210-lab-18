@@ -44,14 +44,16 @@ int main(){
     cin >> choice;
 
     bool more_reviews = 1; // if 0, while loop ends
+    char temp_more_reviews;
     
     if (choice == 1){ // adding node to the head of the linked list
         while(more_reviews){
+            float temp_rating;
+            string temp_comment;
+
             cout << "Enter review rating 0-5: ";
             Node *new_value = new Node;
-            float temp_rating;
             cin >> temp_rating;
-            string temp_comment;
             cout << "Enter review comments: ";
             cin.ignore();
             getline(cin, temp_comment);
@@ -63,16 +65,21 @@ int main(){
             }
             else{ // if its not the first node
                 new_value->next = head;
+                new_value->comments = temp_comment;
+                new_value->rating = temp_rating;
                
             }
-            
+            cout << "Enter another review? Y/N: ";
+            cin >> temp_more_reviews;
+            if (temp_more_reviews == 'n'){
+                more_reviews = 0;
+            }
         }
     }
     else { // adding node to the tail of the linked list
-    
 
     }
-
+    cout << 
     delete_linked_list(current, head);
     head = nullptr;
     return 0;
