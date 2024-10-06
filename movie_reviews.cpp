@@ -9,7 +9,7 @@ using namespace std;
    At startup, the program asks which mode the user would like to use (adding by head or tail)
    There should be 2 pieces of data obtained (rating and the comments/review of the movie)*/
 
-// CITED: Will be reusing some of my code from my previous lab submission (Lab 17) for linked list functions
+// CITED: Will be reusing some of my code from my previous lab submission (Lab 17) for linked list functions 
 
 struct Node {
     float value;
