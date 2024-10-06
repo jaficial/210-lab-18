@@ -31,14 +31,15 @@ void delete_linked_list(Node*current, Node *head){
 }
 
 // front node function works
-void add_front_node(Node *new_value, Node *head, string temp_comment, int temp_rating){
+void add_front_node(Node *new_value, Node *head, string temp_comment, float temp_rating){
 	new_value->next = head;
 	new_value->comments = temp_comment;
 	new_value->rating = temp_rating;
 }
 
 void add_tail_node(Node *new_value, Node *tail, string temp_comment, int temp_rating){
-	new_value->next = tail;
+    tail->next = new_value;
+    new_value->next = nullptr;
 	new_value->comments = temp_comment;
 	new_value->rating = temp_rating;
 }
@@ -131,14 +132,15 @@ int main(){
                 new_value->next = nullptr;
                 new_value->rating = temp_rating;
                 new_value->comments = temp_comment;
-                current = new_value;
-                tail = current; // tail-> now has the data of the first node and points to nullptr
+                head = new_value;
+                tail = head; // tail-> now has the data of the first node and points to nullptr
             }
             else{
-                // add_tail_node(new_value, tail, temp_comment, temp_rating);
-                new_value->next = nullptr;
-                new_value->comments = temp_comment;
-                new_value->rating = temp_rating;
+                add_tail_node(new_value, tail, temp_comment, temp_rating);
+                // tail->next = new_value;
+                // new_value->next = nullptr;
+                // new_value->comments = temp_comment;
+                // new_value->rating = temp_rating;
                 tail = new_value; // tail node is now the most recently added node
             }
             cout << "Enter another review? Y/N: ";
@@ -153,7 +155,7 @@ int main(){
     
     // output is printing out correctly
     // FOR THE 2ND CHOICE: output(current) prints out the tail node, output(head) prints out the head node
-    output(current);
+    output(head);
 
     delete_linked_list(current, head);
     head = nullptr;
