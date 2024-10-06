@@ -27,10 +27,14 @@ int main(){
     Node *head = nullptr;
     int choice;
     cout << "Which linked list method should we use?" << endl;
-    cout << setw(18) << "[1] New nodes are added at the head of the linked list" << endl;
-    cout << setw(18) << "[2] New nodes are added at the tail of the linked list" << endl;
-    cout << setw(18) << "Choice: ";
+    cout << setw(15) << "[1] New nodes are added at the head of the linked list" << endl;
+    cout << setw(15) << "[2] New nodes are added at the tail of the linked list" << endl;
+    cout << setw(15) << "Choice: ";
     cin >> choice;
 
+    if (choice == 1){
+
+        
+    }
     return 0;
 }
