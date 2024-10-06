@@ -32,20 +32,28 @@ void delete_linked_list(Node*current, Node *head){
     }
 }
 
+// output is fixed apart for some formatting
 void output(Node * list){
     if (!list){
         cout << "Empty list." << endl;
+        return;
     }
 
-    int count = 1;
-    Node * current = list;
-    cout << "Outputting all reviews:" << endl;
-    while(current){
-        cout << setw(15) << "> Review " << count++ << ": " << current->rating << ": " << current->comments;
-        cout << endl;
-        current = current->next;
+    else{
+        int count = 1;
+        Node * current = list;
+        cout << "Outputting all reviews:" << endl;
+        float average;
+        while(current){
+            cout << setw(4) << "" << "> Review " << count++ << ": " << current->rating << ": " << current->comments;
+            cout << endl;
+            average += current->rating;
+            current = current->next;
+        }
+        count--;
+        average = average / count;
+        cout << setw(4) << "" << "> Average: " << average << endl;
     }
-
 }
 
 int main(){
@@ -54,9 +62,9 @@ int main(){
 
     int choice;
     cout << "Which linked list method should we use?" << endl;
-    cout << setw(15) << "[1] New nodes are added at the head of the linked list" << endl;
-    cout << setw(15) << "[2] New nodes are added at the tail of the linked list" << endl;
-    cout << setw(15) << "Choice: ";
+    cout << setw(4) << "" << "[1] New nodes are added at the head of the linked list" << endl;
+    cout << setw(4) << "" << "[2] New nodes are added at the tail of the linked list" << endl;
+    cout << setw(4) << "" << "Choice: ";
     cin >> choice;
 
     bool more_reviews = 1; // if 0, while loop ends
@@ -99,14 +107,11 @@ int main(){
 
     //---------------------------------------------------------------------------------------
     
-    // cout << "this will be most recent head: " << endl;
-    // cout << head->comments << endl;
-    // cout << head->rating << endl;
-
+    //output is printing out correctly
     output(head);
 
     delete_linked_list(current, head);
     head = nullptr;
-    output(head);
+    // linked list is properly deallocated
     return 0;
 }
