@@ -34,7 +34,7 @@ void delete_linked_list(Node*current, Node *head){
 
 int main(){
     Node *head = nullptr;
-    Node *current = head;
+    Node *current = head; // current points to head node
 
     int choice;
     cout << "Which linked list method should we use?" << endl;
@@ -43,27 +43,28 @@ int main(){
     cout << setw(15) << "Choice: ";
     cin >> choice;
 
-    bool more_reviews = 1;
-    float rating;
-
+    bool more_reviews = 1; // if 0, while loop ends
     
-    if (choice == 1){
+    if (choice == 1){ // adding node to the head of the linked list
         while(more_reviews){
             cout << "Enter review rating 0-5: ";
             Node *new_value = new Node;
             float temp_rating;
             cin >> temp_rating;
             string review_comment;
-            if (!head){
+            if (!head){ // if its the first node
                 head = new_value;
                 new_value->next = nullptr;
-                new_value->rating = temp_rating
-
+                new_value->rating = temp_rating;
+            }
+            else{ // if its not the first node
+                new_value->next = head;
+                new_value->
             }
             
         }
     }
-    else {
+    else { // adding node to the tail of the linked list
     
 
     }
