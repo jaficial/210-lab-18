@@ -43,7 +43,8 @@ void add_tail_node(Node *new_value, Node *tail, string temp_comment, float temp_
 	new_value->rating = temp_rating;
 }
 
-// output is fixed
+/* output function traverses the linked list and outputs the nodes of the linked list, 
+   as well as calulates the average of the movie ratings. */ 
 void output(Node * list){
     if (!list){
         cout << "Empty list." << endl;
@@ -113,8 +114,8 @@ int main(){
    }
     
     else { // adding node to the tail of the linked list, 
-	    /* this needs to be formatted in a way where new value needs to 
-	     be pointing to a null in order to add to the tail. Return to this function afterwards. */ 
+	    /* NOTE: this needs to be formatted in a way where new value needs to 
+	     be pointing to a null in order to add to the tail */ 
         while(more_reviews){
             float temp_rating;
             string temp_comment;
@@ -131,7 +132,7 @@ int main(){
                 new_value->rating = temp_rating;
                 new_value->comments = temp_comment;
                 head = new_value;
-                tail = head; // tail-> now has the data of the first node and points to nullptr
+                tail = head; // tail now has the data of the first node and points to nullptr
             }
             else{
                 add_tail_node(new_value, tail, temp_comment, temp_rating);
@@ -146,8 +147,6 @@ int main(){
         }
     }
 
-    //---------------------------------------------------------------------------------------
-    
     // output is printing out correctly
     output(head);
 
